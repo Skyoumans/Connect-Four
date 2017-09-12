@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" src="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Connect Four | Game Board</title>
 </head>
+<header>
+    <div class="jumbotron text-center">
+        <h1>Connect Four Game Board</h1>
+    </div>
+    <div class="header text-center">
+        <h3>Instructions</h3>
+        <ol class="list-group">
+            <li class="list-group-item">Use Arrow Buttons to select the row</li>
+            <li class="list-group-item">Click end turn to drop piece.</li>
+            <li class="list-group-item">Connect Four pieces (left/right, up/down, diagonal) to win</li>
+        </ol>
+</header>
 <body>
-    
+    <div class="container-fluid text-center">
+        <div class="row">
+            <a href="#" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-arrow-left"></span></a>
+            <div class="btn btn-lg btn-danger" id="playerOne">Player One</div>
+            <div class="btn btn-lg btn-danger" id="playerTwo">Player Two</div>
+            <a href="#" class="btn btn-lg btn-info"><span class="glyphicon glyphicon-arrow-right"></span></a>
+        </div>
+    </div>
+    <div class="container">
+        
+    </div>
 </body>
+<br>
+<br>
+<br>
+<footer class="text-center">
+    <div class="jumbotron">
+        <a href="./landingPage.html" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-home"></span> </a>
+        <a href="./gameBoard.html" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-refresh"></span> </a>
+    </div>
+</footer>
 </html>
