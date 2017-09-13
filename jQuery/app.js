@@ -9,3 +9,20 @@ for (i=0; i<42; i++) {
     tiles[i].diagR = null;
     tiles[i].diagL = null;    
 }
+
+
+//setting the check properties to "unknown"
+for (a=0; a<12; a++) {
+    tiles[a].horz = "unknown";
+    tiles[a].diagR = "unknown";
+}
+for (a=21; a<33; a++) {
+    tiles[a].horz = "unknown";
+}
+for (a=0; a<21; a++) {
+    tiles[a].vert = "unknown";
+}
+for (a=9; a<21; a++) {
+    tiles[a].diagL = "unknown";
+}
+
