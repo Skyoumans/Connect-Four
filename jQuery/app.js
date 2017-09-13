@@ -26,3 +26,16 @@ for (a=9; a<21; a++) {
     tiles[a].diagL = "unknown";
 }
 
+//changes the order of tiles to more easily resemble a game board
+var game = []
+for (b of tiles) {
+    game[b.box] = b;
+}
+
+//creating the gameBoard
+var screen = "";
+for (var c=0; c<42; c++) {
+    screen += "<div class='tile'></div>";
+}
+$(".gameBoard").html = screen;
+
