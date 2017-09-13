@@ -1,7 +1,7 @@
 // Create variables for use in the game.
 
 // Config object.
-var config = {
+const config = {
     blkPlayerName: "Player One",
     redPlayerName: "Player Two",
     claimedMsg: "This space has already been claimed. Make a different choice.",
@@ -13,7 +13,7 @@ var config = {
 // Define the empty board as a two-dimensional array, full of zeros. In the
 // game, 0 represents empty, 'red' represents a red disc, and 'black' represents
 // a black disc.
-var board = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
+const board = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
 
 // Set the starting player.
-var currentPlayer = config.startingPlayer;
+let currentPlayer = config.startingPlayer;
