@@ -1,18 +1,14 @@
-body {
-    margin: 0px auto;
+.wrapper {
+    margin: 50px auto 0;
+    width: 450px;
 }
-.board {
-    width: 600px;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(7, 100px);
-    grid-template-rows: 100px 100px 100px;
-    grid-auto-flow: row;
+.board button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 0;
+    background: #ADADAD;
 }
-.tile {
-    background-color: blue;
-    color: black;
-    border-radius : 5px;
-    padding: 20px;
-    font-size: 150%;
+table {
+    text-align: center;
 }
