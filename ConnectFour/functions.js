@@ -1,5 +1,5 @@
 
-function addDiscToBoard(color, x_pos, y_pos) {
+function addDisc(color, x_pos, y_pos) {
     board[y_pos][x_pos] = color;
     console.log('working');
 }
@@ -29,7 +29,7 @@ function changePlayer() {
 
 
 function dropToBottom(x_pos, y_pos) {
-    //Starting at the bottom, check each row for an empty space and fill it with the piece
+    //Starting at the bottom, check each row for an empty space and fill it with a disc
     for (let y = 5; y > y_pos; y--) {
         if (board[y][x_pos] === 0) {
             return y;
@@ -92,15 +92,13 @@ function vertWin() {
         prevValue = 0,
         tally = 0;
 
-    // Scan each column in series, tallying the length of each series. If a
-    // series ever reaches four, return true for a win.
+    //Scans columns for a series of 4, returning a win. Resets if theres a gap
     for (let x = 0; x <= 6; x++) {
         for (let y = 0; y <= 5; y++) {
             currValue = board[y][x];
             if (currValue === prevValue && currValue !== 0) {
                 tally += 1;
             } else {
-                // Reset the tally if you find a gap.
                 tally = 0;
             }
             if (tally === config.numToWin - 1) {
@@ -109,35 +107,32 @@ function vertWin() {
             prevValue = currValue;
         }
 
-        // After each column, reset the tally and previous value.
         tally = 0;
         prevValue = 0;
     }
 
-    // No vertical win was found.
     return false;
 }
 
 function diagWin() {
     let x = null,
         y = null,
-        xtemp = null,
-        ytemp = null,
+        tempx = null,
+        tempy = null,
         currValue = null,
         prevValue = 0,
         tally = 0;
 
-    // Test for down-right diagonals across the top.
+    // Test for down-right diagonals across top
     for (x = 0; x <= 6; x++) {
-        xtemp = x;
-        ytemp = 0;
+        tempx = x;
+        tempy = 0;
 
-        while (xtemp <= 6 && ytemp <= 5) {
-            currValue = board[ytemp][xtemp];
+        while (tempx <= 6 && tempy <= 5) {
+            currValue = board[tempy][tempx];
             if (currValue === prevValue && currValue !== 0) {
                 tally += 1;
             } else {
-                // Reset the tally if you find a gap.
                 tally = 0;
             }
             if (tally === config.numToWin - 1) {
@@ -145,26 +140,23 @@ function diagWin() {
             }
             prevValue = currValue;
 
-            // Shift down-right one diagonal index.
-            xtemp++;
-            ytemp++;
+            tempx++;
+            tempy++;
         }
-        // Reset the tally and previous value when changing diagonals.
         tally = 0;
         prevValue = 0;
     }
 
-    // Test for down-left diagonals across the top.
+    // Test for down-left diagonals across top
     for (x = 0; x <= 6; x++) {
-        xtemp = x;
-        ytemp = 0;
+        tempx = x;
+        tempy = 0;
 
-        while (0 <= xtemp && ytemp <= 5) {
-            currValue = board[ytemp][xtemp];
+        while (0 <= tempx && tempy <= 5) {
+            currValue = board[tempy][tempx];
             if (currValue === prevValue && currValue !== 0) {
                 tally += 1;
             } else {
-                // Reset the tally if you find a gap.
                 tally = 0;
             }
             if (tally === config.numToWin - 1) {
@@ -172,26 +164,23 @@ function diagWin() {
             }
             prevValue = currValue;
 
-            // Shift down-left one diagonal index.
-            xtemp--;
-            ytemp++;
+            tempx--;
+            tempy++;
         }
-        // Reset the tally and previous value when changing diagonals.
         tally = 0;
         prevValue = 0;
     }
 
-    // Test for down-right diagonals down the left side.
+    // Test for down-right diagonals down the side.
     for (y = 0; y <= 5; y++) {
-        xtemp = 0;
-        ytemp = y;
+        tempx = 0;
+        tempy = y;
 
-        while (xtemp <= 6 && ytemp <= 5) {
-            currValue = board[ytemp][xtemp];
+        while (tempx <= 6 && tempy <= 5) {
+            currValue = board[tempy][tempx];
             if (currValue === prevValue && currValue !== 0) {
                 tally += 1;
             } else {
-                // Reset the tally if you find a gap.
                 tally = 0;
             }
             if (tally === config.numToWin - 1) {
@@ -199,26 +188,23 @@ function diagWin() {
             }
             prevValue = currValue;
 
-            // Shift down-right one diagonal index.
-            xtemp++;
-            ytemp++;
+            tempx++;
+            tempy++;
         }
-        // Reset the tally and previous value when changing diagonals.
         tally = 0;
         prevValue = 0;
     }
 
-    // Test for down-left diagonals down the right side.
+    // Test for down-left diagonals down side.
     for (y = 0; y <= 5; y++) {
-        xtemp = 6;
-        ytemp = y;
+        tempx = 6;
+        tempy = y;
 
-        while (0 <= xtemp && ytemp <= 5) {
-            currValue = board[ytemp][xtemp];
+        while (0 <= tempx && tempy <= 5) {
+            currValue = board[tempy][tempx];
             if (currValue === prevValue && currValue !== 0) {
                 tally += 1;
             } else {
-                // Reset the tally if you find a gap.
                 tally = 0;
             }
             if (tally === config.numToWin - 1) {
@@ -226,15 +212,12 @@ function diagWin() {
             }
             prevValue = currValue;
 
-            // Shift down-left one diagonal index.
-            xtemp--;
-            ytemp++;
+            tempx--;
+            tempy++;
         }
-        // Reset the tally and previous value when changing diagonals.
         tally = 0;
         prevValue = 0;
     }
 
-    // No diagonal wins found. Return false.
     return false;
 }

@@ -16,8 +16,8 @@ let config = {
     drawMsg: "The game is a draw",
     winMsg: "The winner is: ",
     numToWin: 4,
-    playerPrefix: "Current Player is: ",
-    winPrefix: "The winner is: ",
+    playerMsg: "Current Player is: ",
+    playerWinMsg: "The winner is: ",
 }
 
 // Define the empty board as an array, full of zeros. In the
