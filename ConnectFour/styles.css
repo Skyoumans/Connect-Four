@@ -3,8 +3,8 @@
     width: 450px;
 }
 .board button {
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     border: 0;
     background: #ADADAD;
@@ -19,4 +19,7 @@ button.black {
 }
 .player {
     text-transform: capitalize;
+}
+.playAgain {
+    display: none;
 }

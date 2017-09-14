@@ -1,32 +1,42 @@
 $(document).ready(function() {
-    config.blkPlayerName = prompt("Please enter your name. You will play as black.", config.blkPlayerName) || config.blkPlayerName;
-    config.redPlayerName = prompt("Please enter your name. You will play red.", config.redPlayerName) || config.redPlayerName;
-    $('.prefix').text(config.playerPrefix);
-    $('#player').addClass(currentPlayer).text(config[currentPlayer + "playerName"]);
-
-    // Start the game sequence by clicking on a button.
-    $('.board button').click(function(e){
-        //detect the clicked buttons x and y position.
-        y_pos = $('.board tr').index($(this).closest('tr'));
-        x_pos = $(this).closest('tr').find('td').index($(this).closest('td'));
-        // Make sure the piece falls to the bottom of the respective column.    
-        y_pos = dropToBottom(x_pos, y_pos);
+    
+        // Setup game
+        config.black.playerName = prompt("Enter your name. You will play black.", config.blkPlayerName) || config.blkPlayerName;
+        config.red.playerName = prompt("Enter your name. You will play red.", config.redPlayerName) || config.redPlayerName;
+        $('.prefix').text(config.playerPrefix);
+        $('#player').addClass(currentPlayer.color).text(currentPlayer.playerName);
+    
+        // Trigger the game sequence by clicking on a position button on the board.
+        $('.board button').click(function() {
+            // Detect the x and y position of the button clicked.
+            y_pos = $('.board tr').index($(this).closest('tr'));
+            x_pos = $(this).closest('tr').find('td').index($(this).closest('td'));
+    
+            // Ensure the piece falls to the bottom of the column.
+            y_pos = dropToBottom(x_pos, y_pos);
+    
             if (posIsClaimed(x_pos, y_pos)) {
                 alert(config.claimedMsg);
                 return;
             }
-        
-            addDiscToBoard(currentPlayer, x_pos, y_pos);
+    
+            addDiscToBoard(currentPlayer.color, x_pos, y_pos);
             showBoard();
-
-            // Look to see if there is a winner.
+            // Check to see if there is a winner.
             if (vertWin() || horzWin() || diagWin()) {
-                // Destroy the click listener so it will further play.
+                // Destroy our click listener to prevent further play.
                 $('.board button').unbind('click');
-                $('.message').text(config.drawMsg);
-                $('.play-again').show("slow");
-                return;
+                alert(config.winPrefix + currentPlayer.playerName);
+    
+            } else if (gameDraw()) {
+                // Destroy our click listener to prevent further play.
+                $('.board button').unbind('click');
+                alert(config.drawMsg + currentPlayer.playerName)
             }
             changePlayer();
+        });
+        $('.play-again').click(function(e) {
+            location.reload();
+        });
+
     });
-});

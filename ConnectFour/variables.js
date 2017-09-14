@@ -4,10 +4,17 @@
 let config = {
     blkPlayerName: "Player One",
     redPlayerName: "Player Two",
-    claimedMsg: "This space has already been claimed. Make a different choice.",
+    black: {
+        color: "black",
+        playerName: "Player One"
+    },
+    red: {
+        color: "red",
+        playerName: "Player Two"
+    },
+    claimedMsg: "This space has already been claimed. Choose again!",
     drawMsg: "The game is a draw",
     winMsg: "The winner is: ",
-    startingPlayer: "black",
     numToWin: 4,
     playerPrefix: "Current Player is: ",
     winPrefix: "The winner is: ",
@@ -19,4 +26,4 @@ let config = {
 let board = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
 
 // Set the starting player.
-let currentPlayer = config.startingPlayer;
+var currentPlayer = config.black;
