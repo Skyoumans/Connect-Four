@@ -11,12 +11,12 @@ $(document).ready(function() {
         let x_pos = $(this).closest('tr').find('td').index($(this).closest('td'));
         // Make sure the piece falls to the bottom of the respective column.    
         y_pos = dropToBottom(x_pos, y_pos);
-            if (positionIsClaimed(x_pos, y_pos)) {
+            if (posIsClaimed(x_pos, y_pos)) {
                 alert(config.claimedMsg);
                 return;
             }
         
-            addDiscToBoard(currentPlayer, x_pos, y_pos);
+            addDisc(currentPlayer, x_pos, y_pos);
             printBoard();
 
             // Look to see if there is a winner.
