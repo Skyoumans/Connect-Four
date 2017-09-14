@@ -2,10 +2,21 @@
     margin: 50px auto 0;
     width: 450px;
 }
-.gameBoard button {
+.board button {
     width: 75px;
     height: 75px;
     border-radius: 50%;
     border: 0;
     background: #ADADAD;
+}
+button.red {
+    background: #CB1010;
+    background: linear-gradient(to bottom, #ff1616 0%, #CB1010 100%);
+}
+button.black {
+    background: #000000;
+    background: linear-gradient(to bottom, #333 0%, #000000 100%);
+}
+.player {
+    text-transform: capitalize;
 }
