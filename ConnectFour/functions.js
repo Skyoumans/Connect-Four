@@ -28,7 +28,7 @@ function changePlayer() {
     
 
 
-function dropToBottom(x_pos, y_pos) {
+function dropDown(x_pos, y_pos) {
     //Starting at the bottom, check each row for an empty space and fill it with a disc
     for (let y = 5; y > y_pos; y--) {
         if (board[y][x_pos] === 0) {
