@@ -42,3 +42,7 @@
     * Keeping score of Player One and Two wins
     * Adding in an AI option
     * Declaring a Draw Game
+
+### Bit Balloon link for game
+
+http://skylarsconnectfourgame.bitballoon.com/
