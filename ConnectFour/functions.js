@@ -99,7 +99,7 @@ function vertWin() {
         tally = 0;
         prevValue = 0;
     }
-
+    //No vertical wins found
     return false;
 }
 
