@@ -12,12 +12,11 @@ let config = {
         color: "red",
         playerName: "Player Two"
     },
-    claimedMsg: "This space has already been claimed. Choose again!",
-    drawMsg: "The game is a draw",
     winMsg: "The winner is: ",
     numToWin: 4,
     playerMsg: "Current Player is: ",
     playerWinMsg: "The winner is: ",
+    claimedMsg: "This space has already been claimed. Choose again!",    
 }
 
 // Define the empty board as an array, full of zeros. In the

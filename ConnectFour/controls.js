@@ -23,16 +23,12 @@ $(document).ready(function() {
             addDisc(currentPlayer.color, x_pos, y_pos);
             showBoard();
             // Check to see if there is a winner.
-            if (vertWin() || horzWin() || diagWin()) {
+            if (vertWin() || horzWin()) {
                 // Destroy our click listener to prevent further play.
                 $('.board button').unbind('click');
                 alert(config.playerWinMsg + currentPlayer.playerName);
-    
-            } else if (gameDraw()) {
-                // Destroy our click listener to prevent further play.
-                $('.board button').unbind('click');
-                alert(config.drawMsg + currentPlayer.playerName)
             }
+    
             changePlayer();
         });
 
