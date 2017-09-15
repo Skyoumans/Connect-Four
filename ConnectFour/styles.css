@@ -16,6 +16,16 @@ button.black {
     background: #000000;
 }
 .jumbotron h1 {
-    color: green;
-    font-size: 50px;
+    color: #3A5502;
+    font-family: 'Righteous', cursive;    
+    font-size: 75px;
+}
+.jumbotron img {
+    border:1px silver;
+    border-radius: 20px; 
+}
+.jumbotron #welcome {
+    color: #3A5502;
+    font-family: 'Righteous', cursive;    
+    font-size: 75px;
 }

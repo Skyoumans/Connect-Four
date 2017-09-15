@@ -24,6 +24,7 @@ function changePlayer() {
         currentPlayer = config.black;
     }
     $('#player').removeClass().addClass(currentPlayer.color).text(currentPlayer.playerName);
+    console.log("switched to " + currentPlayer.playerName)
 }
     
 

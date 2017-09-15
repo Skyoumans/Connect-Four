@@ -5,6 +5,8 @@ $(document).ready(function() {
         config.red.playerName = prompt("Enter your name. You will play red.", config.redPlayerName) || config.redPlayerName;
         $('.prefix').text(config.playerMsg);
         $('#player').addClass(currentPlayer.color).text(currentPlayer.playerName);
+        console.log(config.blkPlayerName + " has joined the game");
+        console.log(config.redPlayerName + " has joined the game");
     
         // Trigger the game sequence by clicking on a position button on the board.
         $('.board button').click(function() {
@@ -17,6 +19,7 @@ $(document).ready(function() {
     
             if (posIsClaimed(x_pos, y_pos)) {
                 alert(config.claimedMsg);
+                console.log("Invalid Move")
                 return;
             }
     
@@ -26,6 +29,7 @@ $(document).ready(function() {
             if (vertWin() || horzWin()) {
                 // Destroy our click listener to prevent further play.
                 $('.board button').unbind('click');
+                console.log(currentPlayer.playerName + " won!")                
                 alert(config.playerWinMsg + currentPlayer.playerName);
             }
     
