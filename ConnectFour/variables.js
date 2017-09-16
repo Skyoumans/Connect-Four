@@ -1,4 +1,4 @@
-// Create variables for use in the game.
+// Create variables for the game.
 
 // Config object.
 let config = {
@@ -19,10 +19,15 @@ let config = {
     claimedMsg: "This space has already been claimed. Choose again!",    
 }
 
-// Define the empty board as an array, full of zeros. In the
+// Define the empty board as a 2D array, full of zeros. In the
 // game, 0 represents empty, 'red' represents a red disc, and 'black' represents
 // a black disc.
-let board = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]];
+let board = [   [0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0], 
+                [0, 0, 0, 0, 0, 0, 0]   ];
 
 // Set the starting player.
 var currentPlayer = config.black;
