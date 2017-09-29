@@ -46,3 +46,5 @@
 ### Bit Balloon link for game
 
 http://skylarsconnectfourgame.bitballoon.com/
+https://trello.com/b/nLnDZ4dv/wdi-project-1-connect-four
+https://gomockingbird.com/projects/3uwasdf/TnMd3U
